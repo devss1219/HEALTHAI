@@ -17,9 +17,8 @@ services:
         value: production
 
   # Frontend Static Site
-  - type: web
+  - type: static
     name: healthai-frontend
-    runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
