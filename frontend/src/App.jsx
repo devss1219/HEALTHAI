@@ -30,7 +30,8 @@ export default function App() {
       if (fullTranscript.trim() !== '') {
         setIsAnalyzing(true);
         try {
-          const res = await fetch('http://localhost:5000/api/generate-report', {
+          const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+          const res = await fetch(`${backendUrl}/api/generate-report`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ transcript: fullTranscript }),

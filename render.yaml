@@ -1,0 +1,38 @@
+services:
+  # Backend API Service
+  - type: web
+    name: healthai-backend
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+
+  # Frontend Static Site
+  - type: web
+    name: healthai-frontend
+    runtime: static
+    region: oregon
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+    envVars:
+      - key: VITE_VAPI_PUBLIC_KEY
+        sync: false
+      - key: VITE_VAPI_ASSISTANT_ID
+        sync: false
+      - key: VITE_BACKEND_URL
+        sync: false
