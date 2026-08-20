@@ -1,0 +1,60 @@
+# ============================================
+# Health Screen App - Project Requirements
+# ============================================
+# This file lists all dependencies needed to
+# run the Health Screen App (Frontend + Backend)
+# ============================================
+
+# ---- Prerequisites ----
+# Node.js >= 18.x
+# npm >= 9.x
+
+# ============================================
+# Backend Dependencies (backend/package.json)
+# ============================================
+# Run: cd backend && npm install
+
+express==^5.2.1              # Web framework for Node.js
+cors==^2.8.6                 # Cross-Origin Resource Sharing middleware
+dotenv==^17.4.2              # Environment variable management
+groq-sdk==^1.5.0             # Groq AI SDK for LLM integration
+openai==^7.5.0               # OpenAI SDK
+
+# Backend Dev Dependencies
+nodemon==^3.1.14             # Auto-restart server on file changes
+
+# ============================================
+# Frontend Dependencies (frontend/package.json)
+# ============================================
+# Run: cd frontend && npm install
+
+react==^18.3.1               # React UI library
+react-dom==^18.3.1           # React DOM renderer
+@vapi-ai/web==latest         # Vapi AI Web SDK for voice assistant
+lucide-react==^0.300.0       # Icon library for React
+
+# Frontend Dev Dependencies
+vite==^5.3.1                 # Build tool and dev server
+@vitejs/plugin-react==^4.3.1 # Vite plugin for React
+tailwindcss==^3.4.4          # Utility-first CSS framework
+postcss==^8.5.26             # CSS post-processor
+autoprefixer==^10.5.4        # CSS vendor prefixing
+
+# ============================================
+# Environment Variables Required
+# ============================================
+# Backend (.env):
+#   GROQ_API_KEY=your_groq_api_key
+#   PORT=5000
+#
+# Frontend (.env):
+#   VITE_VAPI_PUBLIC_KEY=your_vapi_public_key
+#   VITE_BACKEND_URL=http://localhost:5000
+
+# ============================================
+# How to Run
+# ============================================
+# 1. Clone the repository
+# 2. cd backend && npm install && npm run dev
+# 3. cd frontend && npm install && npm run dev
+# 4. Open http://localhost:5173 in your browser
